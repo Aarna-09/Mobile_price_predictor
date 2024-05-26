@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phone Price Predictor</title>
+    <style>
+        body {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjkxDY0LRwKiaYTBHQOA3gxduUdcMMuU295CWYKCa7sQ&s');
+            background-repeat: no-repeat; 
+            background-size: cover; 
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            position: relative;
+        }
+        .form-container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: rgb(238, 237, 240);
+            margin-top: 50px;
+        }
+        .form-container h2 {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+        }
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Phone Price Predictor</h2>
+        <form action="/predict" method="post">
+            <div class="form-group">
+                <label for="rating">Select a Rating:</label>
+                <select id="Ratings" name="Ratings">
+                    {% for rating in ratings %}
+                        <option value="{{ rating }}">{{ rating }}</option>
+                    {% endfor %}
+                </select>
+                <label for="ram">Select a RAM:</label>
+                <select id="RAM" name="RAM">
+                    {% for ram in Ram %}
+                        <option value="{{ ram }}">{{ ram }}</option>
+                    {% endfor %}
+                </select>
+                <label for="rom">Select a ROM:</label>
+                <select id="ROM" name="ROM">
+                    {% for rom in Rom %}
+                        <option value="{{ rom }}">{{ rom }}</option>
+                    {% endfor %}
+                </select>
+                <label for="mobile_size">Select Mobile Size:</label>
+                <select id="Mobile_Size" name="Mobile_Size">
+                    {% for mobile_size in Mobile_size %}
+                        <option value="{{ mobile_size }}">{{ mobile_size }}</option>
+                    {% endfor %}
+                </select>
+                <label for="primary_cam">Select Primary Camera:</label>
+                <select id="Primary_Cam" name="Primary_Cam">
+                    {% for primary_cam in Primary %}
+                        <option value="{{ primary_cam }}">{{ primary_cam }}</option>
+                    {% endfor %}
+                </select>
+                <label for="selfi_cam">Select Selfie Camera:</label>
+                <select id="Selfi_Cam" name="Selfi_Cam">
+                    {% for selfi_cam in Selfie %}
+                        <option value="{{ selfi_cam }}">{{ selfi_cam }}</option>
+                    {% endfor %}
+                </select>
+                <label for="Battery_power">Select Battery Power:</label>
+                <select id="Battery_Power" name="Battery_Power">
+                    {% for Battery_power in battery %}
+                        <option value="{{ Battery_power }}">{{ Battery_power }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit">PREDICT</button>
+            </div>
+        </form>
+        {% if prediction %}
+            <div class="result">
+                <h3>Predicted Price: {{ prediction }}</h3>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Website</title>
+    <style>
+        body {
+            background-image: url('https://th.bing.com/th/id/OIG4.a59nXG2PgnVjTD8VslQK?pid=ImgGn');
+            background-repeat: no-repeat; 
+            background-size: cover; 
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            position: relative; 
+        }
+
+        .start-button {
+            background-color: #000;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="input-group">
+        <a href="{{ url_for('layout1') }}" class="start-button">Let's Get Started</a>
+    </div>
+</body>
+</html>
