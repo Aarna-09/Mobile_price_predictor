@@ -55,9 +55,7 @@ def predict():
 
        
     return render_template('layout1.html', prediction=prediction[0], ratings=rating_values, Ram=ram, Rom=rom, Mobile_size=mobile_size, Primary=primary_cam, Selfie=selfi_cam, battery=battery_power)
-    # except Exception as e:
-    #     logging.error(f"An error occurred during prediction: {e}")
-    #     return "An error occurred during prediction. Please check the server logs."
+   
 
 if __name__ == '__main__':
     
